@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <Version>0.1.0</Version>
-    <Description>Makes it easy to render a RenderFragment (part of a Compoent) outside of the current render tree. Use the &lt;Beam To="My.target"&gt; component to "beam" its content to &lt;Materializer Name="My.target"&gt;, no matter where in the render tree the Materializer is placed.</Description>
+    <Description>Makes it easy to render a RenderFragment (part of a Component) outside of the current render tree. Use the &lt;Beam To="My.target"&gt; component to "beam" its content to &lt;Materializer Name="My.target"&gt;, no matter where in the render tree the Materializer is placed.</Description>
     <Company />
     <Authors />
     <Product />

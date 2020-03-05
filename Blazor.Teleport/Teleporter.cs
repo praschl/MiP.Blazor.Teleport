@@ -30,5 +30,17 @@ namespace Blazor.Teleport
 
             return _fragments[atTarget];
         }
+
+        public void Unset(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentNullException(nameof(name));
+
+            if (_fragments.ContainsKey(name))
+                _fragments.Remove(name);
+
+            TeleportFinished?.Invoke(name);
+
+        }
     }
 }

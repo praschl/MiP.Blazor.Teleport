@@ -1,4 +1,6 @@
-﻿@inject ITeleporter _teleporter
+﻿@implements IDisposable
+
+@inject ITeleporter _teleporter
 
 @code {
     [Parameter]
@@ -15,5 +17,10 @@
             throw new ArgumentException("The 'To' property must be set the the name of a materializer.", nameof(To));
 
         _teleporter.Beam(To, ChildContent);
+    }
+
+    public void Dispose()
+    {
+        _teleporter.Unset(To);
     }
 }

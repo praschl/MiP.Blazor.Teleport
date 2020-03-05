@@ -10,9 +10,9 @@ namespace Blazor.Teleport.Test
     public class TeleporterTest
     {
         private readonly Teleporter _teleporter = new Teleporter();
-        private RenderFragment _testFragment1 = builder => builder.AddContent(0, "Test 1");
-        private RenderFragment _testFragment2 = builder => builder.AddContent(1, "Test 2");
-        private RenderFragment _testFragment3 = builder => builder.AddContent(2, "Test 3");
+        private readonly RenderFragment _testFragment1 = builder => builder.AddContent(0, "Test 1");
+        private readonly RenderFragment _testFragment2 = builder => builder.AddContent(1, "Test 2");
+        private readonly RenderFragment _testFragment3 = builder => builder.AddContent(2, "Test 3");
 
         [DataRow(null)]
         [DataRow("")]
@@ -64,6 +64,34 @@ namespace Blazor.Teleport.Test
             fragment1.Should().BeSameAs(_testFragment1);
             fragment2.Should().BeSameAs(_testFragment2);
             fragment3.Should().BeSameAs(_testFragment3);
+        }
+
+        [TestMethod]
+        public void Unset_clears_fragment()
+        {
+            _teleporter.Beam("one", _testFragment1);
+
+            var fragment1 = _teleporter.Materialize("one");
+            fragment1.Should().NotBeNull();
+
+            _teleporter.Unset("one");
+
+            fragment1 = _teleporter.Materialize("one");
+            fragment1.Should().BeNull();
+        }
+
+        [TestMethod]
+        public void Unset_raises_event()
+        {
+            var raised = new List<string>();
+
+            _teleporter.TeleportFinished += raised.Add;
+
+            _teleporter.Unset("one");
+            raised.Should().BeEquivalentTo("one");
+
+            _teleporter.Unset("two");
+            raised.Should().BeEquivalentTo("one", "two");
         }
     }
 }

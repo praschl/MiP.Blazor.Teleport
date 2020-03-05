@@ -6,9 +6,12 @@
     <NavItem Icon="plus" Text="Counter" Url="counter" />
     <NavItem Icon="list-rich" Text="Fetch data" Url="fetchdata" />
 </Beam>
-<Beam To="Corner">
+<!-- When navigating to counter or fetchdata, the corner will be set
+     but when navigating back to index, the corner will be cleared again.
+    -->
+@*<Beam To="Corner">
     <span class="oi oi-home" />
-</Beam>
+</Beam>*@
 <Beam To="TopRow">
     <h3>Index page</h3>
 </Beam>

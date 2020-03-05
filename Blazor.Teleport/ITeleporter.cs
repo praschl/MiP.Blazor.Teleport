@@ -9,6 +9,8 @@ namespace Blazor.Teleport
 
         RenderFragment Materialize(string atTarget);
 
+        void Unset(string name);
+
         event Action<string> TeleportFinished;
     }
 }
