@@ -1,0 +1,19 @@
+﻿<li class="nav-item px-3">
+    <NavLink class="nav-link" href="@Url" Match="@Match">
+        <span class="oi oi-@Icon" aria-hidden="true"></span> @Text
+    </NavLink>
+</li>
+
+@code {
+    [Parameter]
+    public NavLinkMatch Match { get; set; } = NavLinkMatch.Prefix;
+
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public string Icon { get; set; }
+
+    [Parameter]
+    public string Url { get; set; }
+}

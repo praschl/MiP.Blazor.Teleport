@@ -1,0 +1,30 @@
+﻿@page "/counter"
+@using Blazor.Teleport
+
+<Beam To="NavItem">
+    <NavItem Icon="list-rich" Text="Fetch data" Url="fetchdata" />
+</Beam>
+<Beam To="Corner">
+    <span class="oi oi-plus" /> @currentCount
+</Beam>
+<Beam To="TopRow">
+    <h3>Counter page</h3>
+</Beam>
+<Beam To="Bottom">
+    This is the end of the counter my friend!
+</Beam>
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

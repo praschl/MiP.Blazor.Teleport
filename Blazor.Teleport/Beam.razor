@@ -1,0 +1,19 @@
+﻿@inject ITeleporter _teleporter
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string To { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (string.IsNullOrEmpty(To))
+            throw new ArgumentException("The 'To' property must be set the the name of a materializer.", nameof(To));
+
+        _teleporter.Beam(To, ChildContent);
+    }
+}

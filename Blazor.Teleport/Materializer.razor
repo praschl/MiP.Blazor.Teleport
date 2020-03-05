@@ -1,0 +1,33 @@
+﻿@inject ITeleporter _teleporter
+
+@implements IDisposable
+
+@_teleporter.Materialize(Name)
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (string.IsNullOrEmpty(Name))
+            throw new ArgumentException("The 'Name' property must be set and match the name of a <Beam>.", nameof(Name));
+
+        _teleporter.TeleportFinished += Update;
+    }
+
+    private void Update(string name)
+    {
+        if (name != Name)
+            return;
+
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _teleporter.TeleportFinished -= Update;
+    }
+}
