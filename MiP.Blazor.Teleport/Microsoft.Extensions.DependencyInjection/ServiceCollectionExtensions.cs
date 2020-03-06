@@ -1,4 +1,4 @@
-﻿using Blazor.Teleport;
+﻿using MiP.Blazor.Teleport;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

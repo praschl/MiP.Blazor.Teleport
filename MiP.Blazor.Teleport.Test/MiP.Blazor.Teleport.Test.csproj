@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor.Teleport\Blazor.Teleport.csproj" />
+    <ProjectReference Include="..\MiP.Blazor.Teleport\MiP.Blazor.Teleport.csproj" />
   </ItemGroup>
 
 </Project>

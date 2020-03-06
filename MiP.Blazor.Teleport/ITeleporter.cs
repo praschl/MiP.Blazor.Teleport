@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 
-namespace Blazor.Teleport
+namespace MiP.Blazor.Teleport
 {
     public interface ITeleporter
     {

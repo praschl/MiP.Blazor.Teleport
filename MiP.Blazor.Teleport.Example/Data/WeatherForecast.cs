@@ -1,6 +1,6 @@
 using System;
 
-namespace Blazor.Teleport.Example.Data
+namespace MiP.Blazor.Teleport.Example.Data
 {
     public class WeatherForecast
     {

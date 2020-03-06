@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Blazor.Teleport.Example.Data
+namespace MiP.Blazor.Teleport.Example.Data
 {
     public class WeatherForecastService
     {

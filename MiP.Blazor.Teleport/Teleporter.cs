@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Blazor.Teleport
+namespace MiP.Blazor.Teleport
 {
     internal class Teleporter : ITeleporter
     {

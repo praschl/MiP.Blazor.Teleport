@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
-namespace Blazor.Teleport.Test
+namespace MiP.Blazor.Teleport.Test
 {
     [TestClass]
     public class TeleporterTest
